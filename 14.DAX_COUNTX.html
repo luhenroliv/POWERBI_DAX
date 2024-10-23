@@ -1,0 +1,21 @@
+A função COUNTX em DAX é usada para contar o número de linhas em uma tabela, avaliando uma expressão em cada linha e contando apenas aquelas que resultam em um valor não em branco. Aqui estão três exemplos de como você pode usar a função COUNTX no Power BI:
+
+Exemplo 1: Contar Vendas com Valor Positivo  
+Suponha que você tenha uma tabela chamada Vendas com uma coluna ValorVenda. Para contar quantas vendas têm um valor positivo, você pode usar a seguinte fórmula DAX:
+
+dax
+ContagemVendasPositivas = COUNTX(FILTER(Vendas, Vendas[ValorVenda] > 0), Vendas[ValorVenda])
+
+
+Exemplo 2: Contar Produtos em Estoque  
+Imagine que você tem uma tabela chamada Produtos com uma coluna Estoque. Para contar quantos produtos têm estoque maior que zero, a fórmula seria:
+
+dax
+ContagemProdutosEmEstoque = COUNTX(FILTER(Produtos, Produtos[Estoque] > 0), Produtos[Estoque])
+
+
+Exemplo 3: Contar Clientes com Compras Acima de um Valor Específico  
+Considere uma tabela chamada Compras com colunas ClienteID e TotalCompra. Para contar quantos clientes fizeram compras acima de um determinado valor, digamos 100, você pode usar:
+
+dax
+ContagemClientesComprasAltas = COUNTX(FILTER(Compras, Compras[TotalCompra] > 100), Compras[ClienteID])
