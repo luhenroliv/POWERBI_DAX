@@ -1,0 +1,21 @@
+A função MINX em DAX é usada para iterar sobre uma tabela, avaliando uma expressão em cada linha e retornando o valor mínimo resultante dessas expressões. Aqui estão três exemplos de como você pode usar a função MINX no Power BI:
+
+Exemplo 1: Mínimo Valor de Venda por Produto  
+Suponha que você tenha uma tabela chamada Vendas com colunas Quantidade e PreçoUnitário. Para encontrar o mínimo valor de venda por produto, você pode usar a seguinte fórmula DAX:
+
+dax
+MinValorVendaPorProduto = MINX(Vendas, Vendas[Quantidade] * Vendas[PreçoUnitário])
+
+
+Exemplo 2: Mínimo Custo Total de Produtos em Estoque  
+Imagine que você tem uma tabela chamada Produtos com colunas CustoUnitário e Estoque. Para calcular o mínimo custo total de produtos em estoque, a fórmula seria:
+
+dax
+MinCustoTotalEstoque = MINX(Produtos, Produtos[CustoUnitário] * Produtos[Estoque])
+
+
+Exemplo 3: Mínimo Lucro por Venda  
+Considere uma tabela chamada Vendas com colunas Receita e Custo. Para calcular o mínimo lucro por venda, você pode usar:
+
+dax
+MinLucroPorVenda = MINX(Vendas, Vendas[Receita] - Vendas[Custo])
