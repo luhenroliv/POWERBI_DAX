@@ -1,0 +1,21 @@
+A fórmula DISTINCTCOUNT em DAX é usada para contar o número de valores distintos em uma coluna. Aqui estão três exemplos de como você pode usar a função DISTINCTCOUNT no Power BI:
+
+Exemplo 1: Contagem de Clientes Únicos  
+Suponha que você tenha uma tabela chamada Vendas com uma coluna ClienteID. Para contar o número de clientes únicos que fizeram compras, você pode usar a seguinte fórmula DAX:
+
+dax
+ContagemClientesUnicos = DISTINCTCOUNT(Vendas[ClienteID])
+
+
+Exemplo 2: Contagem de Produtos Únicos Vendidos  
+Imagine que você tem uma tabela chamada Vendas com uma coluna ProdutoID. Para contar o número de produtos únicos vendidos, a fórmula seria:
+
+dax
+ContagemProdutosUnicosVendidos = DISTINCTCOUNT(Vendas[ProdutoID])
+
+
+Exemplo 3: Contagem de Cidades Únicas de Fornecedores  
+Considere uma tabela chamada Fornecedores com uma coluna Cidade. Para contar o número de cidades únicas onde seus fornecedores estão localizados, você pode usar:
+
+dax
+ContagemCidadesUnicasFornecedores = DISTINCTCOUNT(Fornecedores[Cidade])
