@@ -1,0 +1,21 @@
+A fórmula MAX em DAX é usada para encontrar o valor máximo em uma coluna específica. Aqui estão três exemplos de como você pode usar a função MAX no Power BI:
+
+Exemplo 1: Máximo de Vendas Totais
+Imagine que você tem uma tabela chamada Vendas com uma coluna ValorVenda. Para encontrar o valor máximo de vendas, você pode usar a seguinte fórmula DAX:
+
+dax
+MaximoVendas = MAX(Vendas[ValorVenda])
+
+
+Exemplo 2: Máximo de Quantidade de Produtos Vendidos
+Suponha que você tenha uma tabela chamada ProdutosVendidos com uma coluna Quantidade. Para obter a quantidade máxima de produtos vendidos, a fórmula seria:
+
+dax
+MaximoQuantidadeVendida = MAX(ProdutosVendidos[Quantidade])
+
+
+Exemplo 3: Máximo de Custos Operacionais
+Considere uma tabela chamada Custos com uma coluna CustoOperacional. Para encontrar o custo operacional máximo, você pode usar:
+
+dax
+MaximoCustosOperacionais = MAX(Custos[CustoOperacional])
