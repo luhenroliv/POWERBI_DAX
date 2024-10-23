@@ -1,0 +1,21 @@
+A fórmula COUNTA em DAX é usada para contar o número de células não vazias em uma coluna. Aqui estão três exemplos de como você pode usar a função COUNTA no Power BI:
+
+Exemplo 1: Contagem de Vendas Registradas  
+Imagine que você tem uma tabela chamada Vendas com uma coluna ValorVenda. Para contar o número de vendas registradas, incluindo valores não numéricos, você pode usar a seguinte fórmula DAX:
+
+dax
+ContagemVendasRegistradas = COUNTA(Vendas[ValorVenda])
+
+
+Exemplo 2: Contagem de Produtos Vendidos  
+Suponha que você tenha uma tabela chamada ProdutosVendidos com uma coluna ProdutoNome. Para contar o número total de produtos vendidos, incluindo aqueles com nomes não numéricos, a fórmula seria:
+
+dax
+ContagemProdutosVendidos = COUNTA(ProdutosVendidos[ProdutoNome])
+
+
+Exemplo 3: Contagem de Registros de Custos  
+Considere uma tabela chamada Custos com uma coluna DescriçãoCusto. Para contar o número de registros de custos que têm uma descrição, você pode usar:
+
+dax
+ContagemRegistrosCustos = COUNTA(Custos[DescriçãoCusto])
