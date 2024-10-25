@@ -1,0 +1,21 @@
+A função NOW em DAX é usada para retornar a data e hora atuais do sistema. Isso é útil para criar cálculos dinâmicos baseados no tempo atual. Aqui estão três exemplos de como usar a função NOW no Power BI:
+
+Exemplo 1: Calcular a Idade de um Registro
+Suponha que você tenha uma tabela chamada Registros com uma coluna DataCriacao. Para calcular quantos dias se passaram desde a criação de cada registro até o momento atual, você pode usar:
+
+dax
+DiasDesdeCriacao = DATEDIFF(Registros[DataCriacao], NOW(), DAY)
+
+
+Exemplo 2: Filtrar Dados Recentes
+Imagine que você queira filtrar uma tabela para mostrar apenas os dados dos últimos 7 dias. Você pode criar uma coluna calculada ou uma medida que verifica se a data de um registro está dentro desse intervalo:
+
+dax
+Ultimos7Dias = IF(Registros[Data] >= NOW() - 7, "Recente", "Antigo")
+
+
+Exemplo 3: Mostrar Data e Hora Atual em um Relatório
+Se você quiser exibir a data e hora atuais em um relatório do Power BI, você pode criar uma medida simples:
+
+dax
+DataHoraAtual = NOW()
