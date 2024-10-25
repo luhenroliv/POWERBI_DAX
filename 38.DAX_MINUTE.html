@@ -1,0 +1,23 @@
+A função MINUTE em DAX é usada para extrair os minutos de uma coluna de data/hora. Isso é útil para análises que precisam de precisão em intervalos de minutos. Aqui estão três exemplos de como usar a função MINUTE no Power BI:
+
+Exemplo 1: Extrair Minutos de Transações
+Suponha que você tenha uma tabela chamada Transacoes com uma coluna DataHoraTransacao. Para extrair os minutos em que cada transação ocorreu, você pode usar:
+
+dax
+MinutosTransacao = MINUTE(Transacoes[DataHoraTransacao])
+
+
+Isso retornará os minutos como um número inteiro entre 0 e 59.
+
+Exemplo 2: Analisar Vendas por Minuto
+Imagine que você queira analisar as vendas por minuto em uma tabela chamada Vendas. Você pode criar uma coluna calculada que retorna os minutos da venda:
+
+dax
+MinutosVenda = MINUTE(Vendas[DataHoraVenda])
+
+
+Exemplo 3: Filtrar Dados para Minutos Específicos
+Se você quiser filtrar dados para considerar apenas transações que ocorreram em um intervalo específico de minutos (por exemplo, entre 15 e 45 minutos de cada hora), você pode usar a função MINUTE em uma medida ou coluna calculada:
+
+dax
+IntervaloMinutos = IF(MINUTE(Tabela[DataHora]) >= 15 && MINUTE(Tabela[DataHora]) <= 45, "Dentro do Intervalo", "Fora do Intervalo")
