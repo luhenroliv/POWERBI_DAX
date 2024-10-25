@@ -1,0 +1,21 @@
+A função SUBSTITUTE em DAX é usada para substituir ocorrências de uma substring por outra dentro de uma string. Isso é útil para limpar ou padronizar dados textuais. Aqui estão três exemplos de como usar a função SUBSTITUTE no Power BI:
+
+Exemplo 1: Padronizar Formato de Telefone
+Suponha que você tenha uma tabela chamada Contatos com uma coluna Telefone que contém números de telefone com diferentes formatações. Para padronizar todos os números removendo os parênteses, você pode usar:
+
+dax
+TelefonePadronizado = SUBSTITUTE(SUBSTITUTE(Contatos[Telefone], "(", ""), ")", "")
+
+
+Exemplo 2: Corrigir Erros de Digitação em Nomes de Produtos
+Imagine que você tenha uma tabela chamada Produtos com uma coluna NomeProduto. Se houver um erro comum de digitação, como "Tecladoo" em vez de "Teclado", você pode corrigi-lo com:
+
+dax
+NomeCorrigido = SUBSTITUTE(Produtos[NomeProduto], "Tecladoo", "Teclado")
+
+
+Exemplo 3: Remover Caracteres Especiais de Descrições
+Considere uma tabela chamada Itens com uma coluna Descricao que contém caracteres especiais como "#". Para removê-los, você pode usar:
+
+dax
+DescricaoLimpa = SUBSTITUTE(Itens[Descricao], "#", "")
