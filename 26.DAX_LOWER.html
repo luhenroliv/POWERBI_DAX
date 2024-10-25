@@ -1,0 +1,21 @@
+A função LOWER em DAX é usada para converter todos os caracteres de uma cadeia de texto em minúsculas. Isso é útil quando você precisa padronizar o formato do texto para comparação ou apresentação. Aqui estão três exemplos de como usar a função LOWER no Power BI:
+
+Exemplo 1: Padronizar Endereços de E-mail  
+Suponha que você tenha uma tabela chamada Contatos com uma coluna Email. Para garantir que todos os endereços de e-mail sejam armazenados em minúsculas, você pode usar:
+
+dax
+EmailMinusculo = LOWER(Contatos[Email])
+
+
+Exemplo 2: Comparação de Texto Insensível a Maiúsculas  
+Imagine que você tenha uma tabela chamada Produtos com uma coluna Categoria. Para comparar categorias de forma insensível a maiúsculas, você pode converter ambas as strings para minúsculas:
+
+dax
+CategoriasIguais = IF(LOWER(Produtos[Categoria]) = LOWER("eletrônicos"), "Sim", "Não")
+
+
+Exemplo 3: Formatação de Nomes de Usuário  
+Considere uma tabela chamada Usuarios com uma coluna NomeUsuario. Para exibir todos os nomes de usuário em minúsculas, você pode usar:
+
+dax
+NomeUsuarioMinusculo = LOWER(Usuarios[NomeUsuario])
