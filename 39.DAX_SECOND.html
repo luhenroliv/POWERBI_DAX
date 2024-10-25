@@ -1,0 +1,23 @@
+A função SECOND em DAX é usada para extrair os segundos de uma coluna de data/hora. Isso é útil para análises que requerem precisão em intervalos de segundos. Aqui estão três exemplos de como usar a função SECOND no Power BI:
+
+Exemplo 1: Extrair Segundos de Transações
+Suponha que você tenha uma tabela chamada Transacoes com uma coluna DataHoraTransacao. Para extrair os segundos em que cada transação ocorreu, você pode usar:
+
+dax
+SegundosTransacao = SECOND(Transacoes[DataHoraTransacao])
+
+
+Isso retornará os segundos como um número inteiro entre 0 e 59.
+
+Exemplo 2: Analisar Eventos por Segundo
+Imagine que você queira analisar eventos que ocorrem a cada segundo em uma tabela chamada Eventos. Você pode criar uma coluna calculada que retorna os segundos do evento:
+
+dax
+SegundosEvento = SECOND(Eventos[DataHoraEvento])
+
+
+Exemplo 3: Filtrar Dados para Segundos Específicos
+Se você quiser filtrar dados para considerar apenas eventos que ocorreram em um intervalo específico de segundos (por exemplo, entre 10 e 30 segundos de cada minuto), você pode usar a função SECOND em uma medida ou coluna calculada:
+
+dax
+IntervaloSegundos = IF(SECOND(Tabela[DataHora]) >= 10 && SECOND(Tabela[DataHora]) <= 30, "Dentro do Intervalo", "Fora do Intervalo")
