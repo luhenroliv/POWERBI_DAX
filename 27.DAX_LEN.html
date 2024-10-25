@@ -1,0 +1,21 @@
+A função LEN em DAX é usada para retornar o número de caracteres em uma cadeia de texto. Isso é útil para validação de dados, análise de comprimento de texto, entre outras aplicações. Aqui estão três exemplos de como usar a função LEN no Power BI:
+
+Exemplo 1: Validação de Comprimento de Senhas  
+Suponha que você tenha uma tabela chamada Usuarios com uma coluna Senha. Para verificar se as senhas têm pelo menos 8 caracteres, você pode usar:
+
+dax
+SenhaValida = IF(LEN(Usuarios[Senha]) >= 8, "Válida", "Inválida")
+
+
+Exemplo 2: Análise de Comprimento de Descrições de Produtos  
+Imagine que você tenha uma tabela chamada Produtos com uma coluna Descricao. Para analisar o comprimento das descrições dos produtos, você pode criar uma coluna calculada:
+
+dax
+ComprimentoDescricao = LEN(Produtos[Descricao])
+
+
+Exemplo 3: Filtragem de Nomes de Clientes Curta  
+Considere uma tabela chamada Clientes com uma coluna NomeCliente. Para identificar clientes com nomes curtos (menos de 5 caracteres), você pode usar:
+
+dax
+NomeCurto = IF(LEN(Clientes[NomeCliente]) < 5, "Sim", "Não")
