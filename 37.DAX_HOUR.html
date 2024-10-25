@@ -1,0 +1,23 @@
+A função HOUR em DAX é usada para extrair a hora de uma determinada coluna de data/hora. Isso pode ser útil para análises que dependem de intervalos de tempo específicos, como vendas por hora. Aqui estão três exemplos de como usar a função HOUR no Power BI:
+
+Exemplo 1: Extrair a Hora de Transações
+Suponha que você tenha uma tabela chamada Transacoes com uma coluna DataHoraTransacao. Para extrair a hora em que cada transação ocorreu, você pode usar:
+
+dax
+HoraTransacao = HOUR(Transacoes[DataHoraTransacao])
+
+
+Isso retornará a hora como um número inteiro entre 0 e 23.
+
+Exemplo 2: Analisar Vendas por Hora
+Imagine que você queira analisar as vendas por hora em uma tabela chamada Vendas. Você pode criar uma coluna calculada que retorna a hora da venda:
+
+dax
+HoraVenda = HOUR(Vendas[DataHoraVenda])
+
+
+Exemplo 3: Filtrar Dados para Horas Específicas
+Se você quiser filtrar dados para considerar apenas transações que ocorreram durante o horário comercial (por exemplo, das 9h às 17h), você pode usar a função HOUR em uma medida ou coluna calculada:
+
+dax
+HorarioComercial = IF(HOUR(Tabela[DataHora]) >= 9 && HOUR(Tabela[DataHora]) <= 17, "Dentro do Horário Comercial", "Fora do Horário Comercial")
