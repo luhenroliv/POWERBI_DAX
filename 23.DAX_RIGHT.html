@@ -1,0 +1,21 @@
+A função RIGHT em DAX é usada para extrair um número especificado de caracteres do final de uma cadeia de texto. Isso é útil quando você precisa isolar uma parte específica de uma string que está no final. Aqui estão três exemplos de como usar a função RIGHT no Power BI:
+
+Exemplo 1: Extrair os Últimos Dígitos de um Número de Conta  
+Suponha que você tenha uma tabela chamada Contas com uma coluna NumeroConta que armazena números de conta. Para extrair os últimos 4 dígitos do número da conta, você pode usar:
+
+dax
+UltimosDigitos = RIGHT(Contas[NumeroConta], 4)
+
+
+Exemplo 2: Obter Extensão de Arquivo  
+Imagine que você tenha uma tabela chamada Arquivos com uma coluna NomeArquivo que armazena nomes de arquivos com extensões. Para extrair a extensão do arquivo, você pode usar:
+
+dax
+ExtensaoArquivo = RIGHT(Arquivos[NomeArquivo], 3)
+
+
+Exemplo 3: Extrair Mês e Dia de uma Data  
+Considere uma tabela chamada Eventos com uma coluna DataEvento no formato "YYYY-MM-DD". Para extrair o mês e o dia da data, você pode usar:
+
+dax
+MesDiaEvento = RIGHT(Eventos[DataEvento], 5)
