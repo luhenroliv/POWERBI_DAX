@@ -1,0 +1,21 @@
+A função MID em DAX é usada para extrair uma sequência de caracteres de uma cadeia de texto, começando em uma posição especificada e com um comprimento especificado. Isso é útil quando você precisa isolar uma parte específica de uma string que não está necessariamente no início ou no final. Aqui estão três exemplos de como usar a função MID no Power BI:
+
+Exemplo 1: Extrair Código do Produto de um Código Completo  
+Suponha que você tenha uma tabela chamada Produtos com uma coluna CodigoCompleto que armazena códigos no formato "ABC-123-XYZ". Para extrair a parte numérica do código, você pode usar:
+
+dax
+CodigoProduto = MID(Produtos[CodigoCompleto], 5, 3)
+
+
+Exemplo 2: Obter Nome do Meio de um Nome Completo  
+Imagine que você tenha uma tabela chamada Funcionarios com uma coluna NomeCompleto no formato "Primeiro Nome do Meio Último". Para extrair o nome do meio, você pode usar:
+
+dax
+NomeDoMeio = MID(Funcionarios[NomeCompleto], FIND(" ", Funcionarios[NomeCompleto]) + 1, FIND(" ", Funcionarios[NomeCompleto], FIND(" ", Funcionarios[NomeCompleto]) + 1) - FIND(" ", Funcionarios[NomeCompleto]) - 1)
+
+
+Exemplo 3: Extrair Mês de uma Data  
+Considere uma tabela chamada Pedidos com uma coluna DataPedido no formato "YYYY-MM-DD". Para extrair o mês da data, você pode usar:
+
+dax
+MesPedido = MID(Pedidos[DataPedido], 6, 2)
