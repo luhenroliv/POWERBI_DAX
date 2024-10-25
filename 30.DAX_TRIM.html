@@ -1,0 +1,22 @@
+A função TRIM em DAX é usada para remover espaços extras de uma string, deixando apenas um único espaço entre palavras e removendo espaços no início e no final. Isso é especialmente útil para limpar dados textuais antes de análises ou comparações. Aqui estão três exemplos de como usar a função TRIM no Power BI:
+
+Exemplo 1: Limpar Nomes de Clientes  
+Suponha que você tenha uma tabela chamada Clientes com uma coluna NomeCliente que pode conter espaços extras. Para garantir que os nomes estejam limpos, você pode usar:
+
+dax
+NomeLimpo = TRIM(Clientes[NomeCliente])
+
+
+Exemplo 2: Preparar Dados para Comparação  
+Imagine que você tenha duas tabelas, Vendas e Clientes, e deseja comparar os nomes dos clientes. Para garantir que os espaços não afetem a comparação, você pode aplicar TRIM:
+
+dax
+NomeClienteVendas = TRIM(Vendas[NomeCliente])
+NomeClienteClientes = TRIM(Clientes[NomeCliente])
+
+
+Exemplo 3: Limpar Entradas de Texto em Comentários  
+Considere uma tabela chamada Feedback com uma coluna Comentario. Para remover espaços desnecessários antes de analisar o texto, você pode usar:
+
+dax
+ComentarioLimpo = TRIM(Feedback[Comentario])
