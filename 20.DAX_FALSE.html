@@ -1,0 +1,21 @@
+A função FALSE em DAX é usada para retornar o valor lógico FALSE. Ela é útil em expressões lógicas e condições para indicar quando uma condição não é atendida. Aqui estão três exemplos de como você pode usar a função FALSE no Power BI:
+
+Exemplo 1: Marcar Produtos como Indisponíveis  
+Suponha que você tenha uma tabela chamada Produtos com uma coluna Estoque. Para marcar todos os produtos que não estão disponíveis (ou seja, têm estoque igual a 0) como FALSE, você pode usar a seguinte fórmula DAX:
+
+dax
+ProdutoIndisponivel = IF(Produtos[Estoque] = 0, FALSE, TRUE)
+
+
+Exemplo 2: Verificar Clientes Não VIP  
+Imagine que você tem uma tabela chamada Clientes com uma coluna StatusVIP. Para criar uma coluna calculada que retorne FALSE para clientes que não são VIP, você pode usar:
+
+dax
+ClienteNaoVIP = IF(Clientes[StatusVIP] <> "VIP", FALSE, TRUE)
+
+
+Exemplo 3: Identificar Transações Não Aprovadas  
+Considere uma tabela chamada Transações com uma coluna Status. Para identificar transações que não foram aprovadas, você pode criar uma coluna calculada que retorne FALSE para transações com status diferente de "Aprovado":
+
+dax
+TransacaoNaoAprovada = IF(Transacoes[Status] <> "Aprovado", FALSE, TRUE)
