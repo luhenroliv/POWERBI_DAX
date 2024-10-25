@@ -1,0 +1,21 @@
+A função IFERROR em DAX é usada para capturar e gerenciar erros em expressões. Ela permite que você especifique um valor alternativo a ser retornado quando uma expressão resulta em um erro. Aqui estão três exemplos de como você pode usar a função IFERROR no Power BI:
+
+Exemplo 1: Evitar Erro de Divisão por Zero  
+Suponha que você tenha uma tabela chamada Vendas com colunas TotalVendas e TotalItens. Para calcular o preço médio por item, evitando erros de divisão por zero, você pode usar a seguinte fórmula DAX:
+
+dax
+PrecoMedioPorItem = IFERROR(Vendas[TotalVendas] / Vendas[TotalItens], 0)
+
+
+Exemplo 2: Substituir Erros em Cálculos de Taxa de Crescimento  
+Imagine que você está calculando a taxa de crescimento entre dois períodos em uma tabela chamada Financeiro com colunas ValorAtual e ValorAnterior. Para substituir erros quando o ValorAnterior é zero, a fórmula seria:
+
+dax
+TaxaCrescimento = IFERROR((Financeiro[ValorAtual] - Financeiro[ValorAnterior]) / Financeiro[ValorAnterior], BLANK())
+
+
+Exemplo 3: Gerenciar Erros em Busca de Valores  
+Considere uma situação em que você está buscando valores de outra tabela usando a função RELATED, e quer substituir erros por um valor padrão. Suponha que você tenha uma tabela de DetalhesVendas e queira buscar o NomeProduto de uma tabela Produtos:
+
+dax
+NomeProduto = IFERROR(RELATED(Produtos[NomeProduto]), "Produto Desconhecido")
