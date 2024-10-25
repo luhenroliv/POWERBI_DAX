@@ -1,0 +1,21 @@
+A função UPPER em DAX é usada para converter todos os caracteres de uma cadeia de texto em maiúsculas. Isso é útil quando você precisa padronizar o formato do texto para comparação ou apresentação. Aqui estão três exemplos de como usar a função UPPER no Power BI:
+
+Exemplo 1: Padronizar Nomes de Clientes  
+Suponha que você tenha uma tabela chamada Clientes com uma coluna NomeCliente. Para garantir que todos os nomes de clientes sejam exibidos em maiúsculas, você pode usar:
+
+dax
+NomeClienteMaiusculo = UPPER(Clientes[NomeCliente])
+
+
+Exemplo 2: Comparação de Texto Insensível a Maiúsculas  
+Imagine que você tenha uma tabela chamada Produtos com uma coluna Categoria. Para comparar categorias de forma insensível a maiúsculas, você pode converter ambas as strings para maiúsculas:
+
+dax
+CategoriasIguais = IF(UPPER(Produtos[Categoria]) = UPPER("Eletrônicos"), "Sim", "Não")
+
+
+Exemplo 3: Formatação de Códigos de Produto  
+Considere uma tabela chamada Inventario com uma coluna CodigoProduto. Para exibir todos os códigos de produto em maiúsculas, você pode usar:
+
+dax
+CodigoProdutoMaiusculo = UPPER(Inventario[CodigoProduto])
