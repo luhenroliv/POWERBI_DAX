@@ -1,0 +1,23 @@
+A função CALCULATE em DAX é uma das funções mais poderosas e flexíveis, usada para modificar o contexto no qual uma expressão de dados é avaliada. Aqui estão três exemplos de como usar a função CALCULATE no Power BI:
+
+Exemplo 1: Somar Vendas de um Ano Específico
+Suponha que você tenha uma tabela de Vendas com uma coluna Ano. Para calcular a soma das vendas para o ano de 2023, você pode usar:
+
+dax
+Vendas2023 = CALCULATE(SUM(Vendas[Valor]), Vendas[Ano] = 2023)
+
+
+Exemplo 2: Filtrar por Categoria
+Imagine que você tenha uma tabela de Produtos com uma coluna Categoria. Para calcular a soma das vendas apenas para a categoria "Eletrônicos", você pode usar:
+
+dax
+VendasEletronicos = CALCULATE(SUM(Vendas[Valor]), Produtos[Categoria] = "Eletrônicos")
+
+
+Exemplo 3: Aplicar Múltiplos Filtros
+Se você quiser calcular a soma das vendas para a categoria "Eletrônicos" no ano de 2023, você pode combinar múltiplos filtros:
+
+dax
+VendasEletronicos2023 = CALCULATE(SUM(Vendas[Valor]), 
+                                  Produtos[Categoria] = "Eletrônicos", 
+                                  Vendas[Ano] = 2023)
