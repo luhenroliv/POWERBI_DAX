@@ -1,0 +1,21 @@
+A função MONTH em DAX é usada para extrair o mês de uma data. Isso é útil quando você precisa analisar ou agrupar dados com base no mês específico de um ano. Aqui estão três exemplos de como usar a função MONTH no Power BI:
+
+Exemplo 1: Extrair o Mês de Datas de Vendas  
+Suponha que você tenha uma tabela chamada Vendas com uma coluna DataVenda. Para extrair o mês de cada venda, você pode usar:
+
+dax
+MesVenda = MONTH(Vendas[DataVenda])
+
+
+Exemplo 2: Analisar Vendas Mensais  
+Imagine que você queira analisar as vendas mensais em uma tabela chamada VendasMensais. Para criar uma coluna que mostre apenas o mês, você pode aplicar a função MONTH:
+
+dax
+MesDoAno = MONTH(VendasMensais[Data])
+
+
+Exemplo 3: Filtrar Transações por Mês Específico  
+Considere uma tabela chamada Transacoes com uma coluna DataTransacao. Se você quiser filtrar transações que ocorreram no mês de março, você pode usar a função MONTH em uma medida ou coluna calculada:
+
+dax
+MesTransacao = MONTH(Transacoes[DataTransacao])
