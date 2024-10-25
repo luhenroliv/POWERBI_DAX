@@ -1,0 +1,21 @@
+A função IF em DAX é usada para realizar testes lógicos e retornar valores diferentes dependendo se a condição é verdadeira ou falsa. Aqui estão três exemplos de como você pode usar a função IF no Power BI:
+
+Exemplo 1: Classificar Vendas como "Alta" ou "Baixa"
+Suponha que você tenha uma tabela chamada Vendas com uma coluna ValorVenda. Para classificar cada venda como "Alta" se o valor for maior que 1000, ou "Baixa" caso contrário, você pode usar a seguinte fórmula DAX:
+
+dax
+ClassificacaoVenda = IF(Vendas[ValorVenda] > 1000, "Alta", "Baixa")
+
+
+Exemplo 2: Determinar Status de Estoque
+Imagine que você tem uma tabela chamada Produtos com uma coluna Estoque. Para determinar se um produto está "Em Estoque" ou "Esgotado", a fórmula seria:
+
+dax
+StatusEstoque = IF(Produtos[Estoque] > 0, "Em Estoque", "Esgotado")
+
+
+Exemplo 3: Aplicar Desconto com Base no Total da Compra
+Considere uma tabela chamada Compras com uma coluna TotalCompra. Para aplicar um desconto de 10% se o total da compra for superior a 500, ou nenhum desconto caso contrário, você pode usar:
+
+dax
+DescontoAplicado = IF(Compras[TotalCompra] > 500, Compras[TotalCompra] * 0.1, 0)
