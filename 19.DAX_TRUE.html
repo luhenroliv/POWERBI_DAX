@@ -1,0 +1,21 @@
+A função TRUE em DAX é usada para retornar o valor lógico TRUE. Ela é frequentemente utilizada em expressões lógicas e condições. Aqui estão três exemplos de como você pode usar a função TRUE no Power BI:
+
+Exemplo 1: Marcar Produtos como Disponíveis  
+Suponha que você tenha uma tabela chamada Produtos com uma coluna Estoque. Para marcar todos os produtos que estão disponíveis (ou seja, têm estoque maior que 0) como TRUE, você pode usar a seguinte fórmula DAX:
+
+dax
+ProdutoDisponivel = IF(Produtos[Estoque] > 0, TRUE, FALSE)
+
+
+Exemplo 2: Verificar Clientes VIP  
+Imagine que você tem uma tabela chamada Clientes com uma coluna StatusVIP. Para criar uma coluna calculada que retorne TRUE para clientes VIP, você pode usar:
+
+dax
+ClienteVIP = IF(Clientes[StatusVIP] = "VIP", TRUE, FALSE)
+
+
+Exemplo 3: Identificar Transações Aprovadas  
+Considere uma tabela chamada Transações com uma coluna Status. Para identificar transações que foram aprovadas, você pode criar uma coluna calculada que retorne TRUE para transações com status "Aprovado":
+
+dax
+TransacaoAprovada = IF(Transacoes[Status] = "Aprovado", TRUE, FALSE)
