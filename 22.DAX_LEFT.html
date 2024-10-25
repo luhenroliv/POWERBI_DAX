@@ -1,0 +1,21 @@
+A função LEFT em DAX é usada para extrair um número especificado de caracteres do início de uma cadeia de texto. Isso é útil quando você precisa isolar uma parte específica de uma string. Aqui estão três exemplos de como usar a função LEFT no Power BI:
+
+Exemplo 1: Extrair Código de Área de um Número de Telefone  
+Suponha que você tenha uma tabela chamada Contatos com uma coluna Telefone que armazena números de telefone no formato "(DDD) 1234-5678". Para extrair o código de área (DDD), você pode usar:
+
+dax
+CodigoArea = LEFT(Contatos[Telefone], 4)
+
+
+Exemplo 2: Obter Iniciais de Nomes  
+Imagine que você tenha uma tabela chamada Funcionarios com uma coluna NomeCompleto. Para criar uma coluna calculada que contenha apenas as iniciais dos nomes, você pode usar:
+
+dax
+Iniciais = LEFT(Funcionarios[NomeCompleto], 1) & LEFT(RIGHT(Funcionarios[NomeCompleto], LEN(Funcionarios[NomeCompleto]) - FIND(" ", Funcionarios[NomeCompleto])), 1)
+
+
+Exemplo 3: Extrair Ano de uma Data  
+Considere uma tabela chamada Pedidos com uma coluna DataPedido no formato "YYYY-MM-DD". Para extrair o ano da data, você pode usar:
+
+dax
+AnoPedido = LEFT(Pedidos[DataPedido], 4)
