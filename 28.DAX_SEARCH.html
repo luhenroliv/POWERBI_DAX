@@ -1,0 +1,25 @@
+A função SEARCH em DAX é usada para localizar a posição de uma substring dentro de uma string maior. Ela é útil para encontrar a presença de palavras ou caracteres específicos em um texto. Aqui estão três exemplos de como usar a função SEARCH no Power BI:
+
+Exemplo 1: Localizar Palavras-Chave em Comentários  
+Suponha que você tenha uma tabela chamada Comentarios com uma coluna TextoComentario. Para encontrar comentários que mencionam a palavra "excelente", você pode usar:
+
+dax
+PosicaoExcelente = SEARCH("excelente", Comentarios[TextoComentario], 1, -1)
+
+
+Se a palavra "excelente" for encontrada, a função retornará a posição inicial da palavra; caso contrário, retornará -1.
+
+Exemplo 2: Verificar Presença de Domínio em Endereços de E-mail  
+Imagine que você tenha uma tabela chamada Contatos com uma coluna Email. Para verificar se um e-mail pertence ao domínio "empresa.com", você pode usar:
+
+dax
+DominioEmpresa = IF(SEARCH("@empresa.com", Contatos[Email], 1, 0) > 0, "Sim", "Não")
+
+
+Isso retornará "Sim" se o e-mail contiver "@empresa.com" e "Não" caso contrário.
+
+Exemplo 3: Identificar Produtos Específicos em Descrições  
+Considere uma tabela chamada Produtos com uma coluna Descricao. Para identificar produtos que mencionam "premium", você pode criar uma coluna calculada:
+
+dax
+ContemPremium = IF(SEARCH("premium", Produtos[Descricao], 1, 0) > 0, "Sim", "Não")
