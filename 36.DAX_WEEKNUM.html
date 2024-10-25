@@ -1,0 +1,26 @@
+A função WEEKNUM em DAX é usada para determinar o número da semana de uma data específica. Isso é útil para análises que precisam agrupar dados por semana. Aqui estão três exemplos de como usar a função WEEKNUM no Power BI:
+
+Exemplo 1: Calcular o Número da Semana de Transações
+Suponha que você tenha uma tabela chamada Transacoes com uma coluna DataTransacao. Para calcular o número da semana em que cada transação ocorreu, você pode usar:
+
+dax
+NumeroDaSemana = WEEKNUM(Transacoes[DataTransacao])
+
+
+Por padrão, a função WEEKNUM considera a semana começando no domingo.
+
+Exemplo 2: Analisar Vendas por Semana
+Imagine que você queira analisar as vendas por semana em uma tabela chamada Vendas. Você pode criar uma coluna calculada que retorna o número da semana:
+
+dax
+SemanaVenda = WEEKNUM(Vendas[DataVenda])
+
+
+Exemplo 3: Ajustar o Primeiro Dia da Semana
+Se você quiser que a semana comece na segunda-feira, você pode usar um segundo argumento na função WEEKNUM:
+
+dax
+NumeroDaSemanaSegunda = WEEKNUM(Tabela[Data], 2)
+
+
+Neste exemplo, o número 2 indica que a semana começa na segunda-feira.
