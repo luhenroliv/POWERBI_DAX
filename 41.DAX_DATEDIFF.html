@@ -1,0 +1,21 @@
+A função DATEDIFF em DAX é usada para calcular a diferença entre duas datas em uma unidade de tempo específica, como dias, meses ou anos. Aqui estão três exemplos de como usar a função DATEDIFF no Power BI:
+
+Exemplo 1: Calcular a Idade em Dias
+Suponha que você tenha uma tabela chamada Clientes com uma coluna DataNascimento. Para calcular a idade de cada cliente em dias, você pode usar:
+
+dax
+IdadeEmDias = DATEDIFF(Clientes[DataNascimento], NOW(), DAY)
+
+
+Exemplo 2: Calcular a Duração de um Projeto em Meses
+Imagine que você tenha uma tabela chamada Projetos com colunas DataInicio e DataFim. Para calcular a duração de cada projeto em meses, você pode usar:
+
+dax
+DuracaoEmMeses = DATEDIFF(Projetos[DataInicio], Projetos[DataFim], MONTH)
+
+
+Exemplo 3: Calcular o Tempo de Serviço em Anos
+Se você quiser calcular o tempo de serviço de um funcionário em anos, com base na data de contratação, você pode usar uma tabela Funcionarios com a coluna DataContratacao:
+
+dax
+TempoDeServico = DATEDIFF(Funcionarios[DataContratacao], NOW(), YEAR)
