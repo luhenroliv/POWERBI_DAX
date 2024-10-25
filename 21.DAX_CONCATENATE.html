@@ -1,0 +1,21 @@
+A função CONCATENATE em DAX é usada para unir duas cadeias de texto em uma única cadeia. No entanto, é importante notar que CONCATENATE só aceita dois argumentos. Para concatenar mais de duas cadeias de texto, você pode aninhar múltiplas funções CONCATENATE ou usar o operador &. Aqui estão três exemplos de como usar CONCATENATE no Power BI:
+
+Exemplo 1: Concatenar Nome e Sobrenome  
+Suponha que você tenha uma tabela chamada Clientes com colunas Nome e Sobrenome. Para criar uma coluna calculada que combine essas duas colunas em um nome completo, você pode usar:
+
+dax
+NomeCompleto = CONCATENATE(Clientes[Nome], " " & Clientes[Sobrenome])
+
+
+Exemplo 2: Criar Identificadores de Produto  
+Imagine que você tenha uma tabela chamada Produtos com colunas Categoria e ID. Para criar um identificador único para cada produto, você pode concatenar essas duas colunas:
+
+dax
+IdentificadorProduto = CONCATENATE(Produtos[Categoria], Produtos[ID])
+
+
+Exemplo 3: Formatar Datas  
+Considere uma tabela chamada Vendas com colunas Ano, Mes e Dia. Para criar uma coluna calculada que formate essas informações em uma data legível, você pode usar:
+
+dax
+DataFormatada = CONCATENATE(CONCATENATE(Vendas[Ano], "-"), CONCATENATE(Vendas[Mes], "-" & Vendas[Dia]))
