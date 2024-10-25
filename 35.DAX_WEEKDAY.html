@@ -1,0 +1,32 @@
+A função WEEKDAY em DAX é usada para determinar o dia da semana de uma data específica. Isso pode ser útil para análises que dependem de dias específicos, como vendas por dia da semana. Aqui estão três exemplos de como usar a função WEEKDAY no Power BI:
+
+Exemplo 1: Identificar o Dia da Semana de Transações
+Suponha que você tenha uma tabela chamada Transacoes com uma coluna DataTransacao. Para identificar o dia da semana em que cada transação ocorreu, você pode usar:
+
+dax
+DiaDaSemana = WEEKDAY(Transacoes[DataTransacao])
+
+
+Por padrão, a função WEEKDAY retorna 1 para domingo, 2 para segunda-feira, e assim por diante até 7 para sábado.
+
+Exemplo 2: Analisar Vendas por Dia da Semana
+Imagine que você queira analisar as vendas por dia da semana em uma tabela chamada Vendas. Você pode criar uma coluna calculada que retorna o nome do dia da semana:
+
+dax
+NomeDiaDaSemana = SWITCH(
+    WEEKDAY(Vendas[DataVenda]),
+    1, "Domingo",
+    2, "Segunda-feira",
+    3, "Terça-feira",
+    4, "Quarta-feira",
+    5, "Quinta-feira",
+    6, "Sexta-feira",
+    7, "Sábado"
+)
+
+
+Exemplo 3: Filtrar Dados para Dias Úteis
+Se você quiser filtrar dados para considerar apenas dias úteis (segunda a sexta-feira), você pode usar a função WEEKDAY em uma medida ou coluna calculada:
+
+dax
+DiaUtil = IF(WEEKDAY(Tabela[Data]) >= 2 && WEEKDAY(Tabela[Data]) <= 6, "Dia Útil", "Fim de Semana")
