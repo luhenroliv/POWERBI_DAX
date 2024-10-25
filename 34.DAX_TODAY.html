@@ -1,0 +1,21 @@
+A função TODAY em DAX é usada para retornar a data atual. Isso é útil quando você precisa trabalhar com a data do dia em suas análises ou cálculos. Aqui estão três exemplos de como usar a função TODAY no Power BI:
+
+Exemplo 1: Calcular Idade  
+Suponha que você tenha uma tabela chamada Clientes com uma coluna DataNascimento. Para calcular a idade de cada cliente com base na data atual, você pode usar:
+
+dax
+Idade = YEAR(TODAY()) - YEAR(Clientes[DataNascimento])
+
+
+Exemplo 2: Filtrar Vendas Recentes  
+Imagine que você queira filtrar as vendas que ocorreram nos últimos 30 dias em uma tabela chamada Vendas. Você pode criar uma coluna calculada para verificar se a venda ocorreu nos últimos 30 dias:
+
+dax
+VendaRecente = IF(Vendas[DataVenda] >= TODAY() - 30, "Recente", "Antiga")
+
+
+Exemplo 3: Mostrar Data Atual em um Relatório  
+Se você quiser exibir a data atual em um relatório ou dashboard, você pode criar uma medida simples que retorna a data de hoje:
+
+dax
+DataAtual = TODAY()
