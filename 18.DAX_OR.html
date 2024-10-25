@@ -1,0 +1,21 @@
+A função OR em DAX é usada para combinar múltiplas condições lógicas, retornando TRUE se pelo menos uma das condições for verdadeira. Aqui estão três exemplos de como você pode usar a função OR no Power BI:
+
+Exemplo 1: Filtrar Vendas Altas ou Recentes  
+Suponha que você tenha uma tabela chamada Vendas com colunas ValorVenda e DataVenda. Para identificar vendas que são maiores que 1000 ou ocorreram após 1º de janeiro de 2024, você pode usar a seguinte fórmula DAX:
+
+dax
+VendasAltasOuRecentes = IF(OR(Vendas[ValorVenda] > 1000, Vendas[DataVenda] > DATE(2024, 1, 1)), "Sim", "Não")
+
+
+Exemplo 2: Identificar Produtos em Estoque ou Ativos  
+Imagine que você tem uma tabela chamada Produtos com colunas Estoque e Status. Para identificar produtos que estão em estoque ou têm status "Ativo", a fórmula seria:
+
+dax
+ProdutoDisponivel = IF(OR(Produtos[Estoque] > 0, Produtos[Status] = "Ativo"), "Disponível", "Indisponível")
+
+
+Exemplo 3: Verificar Compras Elegíveis para Desconto  
+Considere uma tabela chamada Compras com colunas TotalCompra e ClienteFrequente. Para verificar se uma compra é elegível para um desconto, sendo o total maior que 500 ou o cliente frequente, você pode usar:
+
+dax
+CompraElegivelDesconto = IF(OR(Compras[TotalCompra] > 500, Compras[ClienteFrequente] = TRUE), "Elegível", "Não Elegível")
