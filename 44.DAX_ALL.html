@@ -1,0 +1,21 @@
+A função ALL em DAX é usada para remover filtros de colunas ou tabelas específicas, permitindo que você calcule valores sem a influência de filtros de contexto. Aqui estão três exemplos de como usar a função ALL no Power BI:
+
+Exemplo 1: Calcular a Soma Total Ignorando Filtros
+Suponha que você tenha uma tabela de Vendas e queira calcular a soma total de vendas, ignorando quaisquer filtros aplicados no relatório:
+
+dax
+SomaTotalVendas = CALCULATE(SUM(Vendas[Valor]), ALL(Vendas))
+
+
+Exemplo 2: Calcular a Média de Preço de Todos os Produtos
+Imagine que você tenha uma tabela de Produtos com uma coluna Preço. Para calcular a média de preço de todos os produtos, ignorando filtros de categoria ou outros:
+
+dax
+MediaPrecoTodosProdutos = CALCULATE(AVERAGE(Produtos[Preço]), ALL(Produtos))
+
+
+Exemplo 3: Calcular a Participação de Mercado
+Se você quiser calcular a participação de mercado de um produto específico em relação ao total de vendas, você pode usar a função ALL para obter o total de vendas sem filtros:
+
+dax
+ParticipacaoMercado = DIVIDE(SUM(Vendas[Valor]), CALCULATE(SUM(Vendas[Valor]), ALL(Vendas)))
