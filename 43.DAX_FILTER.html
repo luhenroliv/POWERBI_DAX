@@ -1,0 +1,23 @@
+A função FILTER em DAX é usada para retornar uma tabela modificada que representa um subconjunto de outra tabela, com base em uma condição especificada. Aqui estão três exemplos de como usar a função FILTER no Power BI:
+
+Exemplo 1: Filtrar Produtos por Preço
+Suponha que você tenha uma tabela chamada Produtos com uma coluna Preço. Para criar uma tabela filtrada que contenha apenas produtos com preço superior a 100, você pode usar:
+
+dax
+ProdutosCaros = FILTER(Produtos, Produtos[Preço] > 100)
+
+
+Exemplo 2: Filtrar Vendas de um Cliente Específico
+Imagine que você tenha uma tabela de Vendas com uma coluna ClienteID. Para criar uma tabela filtrada que contenha apenas vendas do cliente com ID 123, você pode usar:
+
+dax
+VendasCliente123 = FILTER(Vendas, Vendas[ClienteID] = 123)
+
+
+Exemplo 3: Filtrar Funcionários por Departamento e Anos de Serviço
+Se você quiser criar uma tabela filtrada de funcionários que trabalham no departamento "Vendas" e têm mais de 5 anos de serviço, você pode usar:
+
+dax
+FuncionariosVendasExperientes = FILTER(Funcionarios, 
+                                       Funcionarios[Departamento] = "Vendas" && 
+                                       Funcionarios[AnosDeServico] > 5)
