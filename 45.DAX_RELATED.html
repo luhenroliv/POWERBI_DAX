@@ -1,0 +1,21 @@
+A função RELATED em DAX é usada para acessar dados de uma tabela relacionada, permitindo que você traga valores de uma tabela para outra com base em uma relação definida no modelo de dados. Aqui estão três exemplos de como usar a função RELATED no Power BI:
+
+Exemplo 1: Trazer o Nome do Cliente para a Tabela de Vendas
+Suponha que você tenha uma tabela de Vendas e uma tabela de Clientes, onde cada venda está associada a um cliente por meio de uma chave estrangeira ClienteID. Para trazer o nome do cliente para a tabela de Vendas, você pode usar:
+
+dax
+NomeCliente = RELATED(Clientes[Nome])
+
+
+Exemplo 2: Obter a Categoria do Produto na Tabela de Vendas
+Imagine que você tenha uma tabela de Produtos e uma tabela de Vendas, e cada venda está associada a um produto. Para trazer a categoria do produto para a tabela de Vendas, você pode usar:
+
+dax
+CategoriaProduto = RELATED(Produtos[Categoria])
+
+
+Exemplo 3: Calcular o Preço Total com Base no Preço Unitário e Quantidade
+Se você tiver uma tabela de Vendas com uma coluna Quantidade e uma tabela de Produtos com uma coluna PreçoUnitário, você pode calcular o preço total de cada venda na tabela de Vendas:
+
+dax
+PrecoTotal = Vendas[Quantidade] * RELATED(Produtos[PrecoUnitario])
