@@ -1,0 +1,9 @@
+CLASSIFICAÇÃO = 
+SWITCH(
+       TRUE(),
+       'TABELA'[FATURAMENTO] > 20000,"Faturamento alto",
+       'TABELA'[FATURAMENTO] > 15000,"Faturamento médio",
+       "Faturamento baixo"
+)
+
+-- Classifica os campos de uma coluna de acordo com as hipóteses.
