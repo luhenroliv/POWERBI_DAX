@@ -1,0 +1,9 @@
+MédiaQuantidadeVendida = AVERAGE(KEEPFILTERS('Vendas', 'Vendas'[Quantidade]))
+
+
+--permite que você execute cálculos em uma coluna, mantendo os filtros ativos em outras colunas. Isso é útil quando você deseja realizar cálculos em um subconjunto específico de dados sem afetar os filtros em outras partes do conjunto de dados.
+
+Exemplo:
+Digamos que você queira calcular a porcentagem das vendas de um determinado produto em relação ao total de vendas, mantendo o filtro no produto selecionado.
+
+PorcentagemVendasProduto = DIVIDE(SUM(KEEPFILTERS('Vendas', 'Vendas'[Quantidade])), SUM('Vendas'[Quantidade]))
